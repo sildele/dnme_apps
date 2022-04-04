@@ -316,7 +316,7 @@ data_grafico <- turismo_interno2[1:nrow(turismo_interno2),] %>%
                       labels = c("Turistas \n(en millones)", "Var. i.a. (%)")),
     n = case_when(indicador == "turistas" ~ n / 1000000, TRUE ~ n)
   ) %>% filter(year >= 2015) %>% 
-  mutate(n_mod = ifelse(n>100 & indicador == "variacion_tur",110,n)) #CORTE DE BARRAS
+  mutate(n_mod = ifelse(n>100 & indicador == "variacion_tur",100,n)) #CORTE DE BARRAS
 
 
 # GRAFICO
